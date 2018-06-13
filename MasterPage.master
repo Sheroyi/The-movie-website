@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Some page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        
+        *{ margin:0px; padding:0px;}
+        
+        img{ border:none;}
+        
+        a{ text-decoration:none; color:White}
+        
+        body
+        {
+           background-color:black;
+        }
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server" style="text-align: center; vertical-align: top;">
+    <div>
+    <table style="width: 750px;color: white;">
+        <tr>
+            <td><a href="index.aspx"><img src="pic/netflix.png" height="100px" alt="" align="left"/></a></td>
+            <td>
+                <a>电影搜索：</a>
+                <asp:TextBox runat="server" ID="TextBox1"></asp:TextBox>
+                <asp:DropDownList runat="server" ID="ddl">
+                    <asp:ListItem>片名</asp:ListItem>
+                    <asp:ListItem>主演</asp:ListItem>
+                    <asp:ListItem>导演</asp:ListItem>
+                </asp:DropDownList>
+                <asp:ImageButton runat="server" ID="ImageButton1" ImageUrl="~/pic/search.jpg" 
+                    onclick="ImageButton1_Click"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+               <a href="index.aspx">首页</a>
+               <a href="index.aspx?FilmType=动作">动作片</a>
+               <a href="index.aspx?FilmType=爱情">爱情片</a>
+               <a href="index.aspx?FilmType=动画">动画片</a>
+               <a href="index.aspx?FilmType=故事">故事片</a>
+               <a href="index.aspx?FilmType=惊悚">惊悚片</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a>用户名：</a>
+                <asp:TextBox ID="tusername" runat="server" Width="80px"></asp:TextBox>
+                &nbsp; 
+                <a>密码：</a>
+                <asp:TextBox ID="tuserpass" runat="server" TextMode="Password" Width="90px"></asp:TextBox>
+                &nbsp; 
+                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/pic/login.jpg"  onclick="ImageButton2_Click" />
+                <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/pic/reg.jpg"  onclick="ImageButton3_Click" />
+            </td>
+        </tr>
+        <tr><td colspan="2"></td></tr>
+        <tr>
+            <td colspan="2">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+       </tr>
+        <tr>
+            <td colspan="2" style="font-size:small">
+                <span>江苏省江宁区弘景大道3666号 中国传媒大学南广学院</span>
+                <br />
+                <span>www.cucn.edu.cn</span>
+            </td>
+        </tr>
+    </table>
+    </div>
+    </form>
+</body>
+</html>
